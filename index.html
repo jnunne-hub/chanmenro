@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ChaNmenrO · Massage · Réflexologie · Maderothérapie</title>
+  <meta name="description" content="Salon de bien-être à Marly : massage, réflexologie, maderothérapie. Couleurs pastel vert/blanc, design épuré et professionnel." />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50:'#ecfdf5',100:'#d1fae5',200:'#a7f3d0',300:'#6ee7b7',400:'#34d399',500:'#10b981',600:'#059669',700:'#047857' }
+          },
+          boxShadow: { soft:'0 8px 24px rgba(2,44,34,.06)', ring:'0 0 0 6px rgba(16,185,129,.12)'},
+          borderRadius: { blob:'2rem' }
+        }
+      }
+    }
+  </script>
+
+  <!-- Utilitaires -->
+  <style>
+    html{scroll-behavior:smooth}
+    .glass{backdrop-filter:blur(8px);background:rgba(255,255,255,.7)}
+    .fade-in{animation:fade .8s ease both}
+    @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+    @keyframes fadeZoom{from{opacity:0;transform:scale(.9);filter:blur(3px)}to{opacity:1;transform:scale(1);filter:blur(0)}}
+    .animate-fadeZoom{animation:fadeZoom 1s ease-out forwards}
+    .no-scrollbar::-webkit-scrollbar{display:none}
+    .no-scrollbar{-ms-overflow-style:none;scrollbar-width:none}
+  </style>
+</head>
+<body class="bg-brand-50 text-slate-800 antialiased">
+
+  <!-- BG decor -->
+  <div aria-hidden class="pointer-events-none fixed inset-0 -z-10">
+    <div class="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-brand-200 opacity-40 blur-3xl"></div>
+    <div class="absolute top-1/3 -right-20 h-80 w-80 rounded-full bg-brand-100 opacity-50 blur-3xl"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-white/70 glass border-b border-white/60">
+    <nav class="mx-auto max-w-6xl px-4">
+      <div class="flex items-center justify-between h-16">
+        <a href="#hero" class="flex items-center gap-3 font-semibold tracking-tight">
+          <img src="asset/icone.png" alt="Logo ChaNmenrO" class="h-9 w-9 rounded-xl shadow-soft object-contain"/>
+          <span class="text-xl">ChaNmenrO</span>
+        </a>
+        <button id="menuBtn" class="lg:hidden inline-flex items-center justify-center p-2 rounded-lg text-slate-600 hover:bg-brand-100/50 focus:outline-none focus:ring-2 focus:ring-brand-400" aria-label="Ouvrir le menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <ul id="navLinks" class="hidden lg:flex items-center gap-6 text-sm font-medium">
+          <li><a class="link" href="#about">Qui suis-je</a></li>
+          <li><a class="link" href="#services">Services</a></li>
+          <li><a class="link" href="#pricing">Tarifs</a></li>
+          <li><a class="link" href="#booking">Réservations</a></li>
+          <li><a class="link" href="#testimonials">Témoignages</a></li>
+          <li><a class="link" href="#contact">Contact</a></li>
+          <li><a href="#booking" class="ml-2 inline-flex items-center rounded-xl bg-brand-600 px-4 py-2 text-white shadow-soft hover:bg-brand-700">Réserver</a></li>
+        </ul>
+      </div>
+      <ul id="mobileMenu" class="lg:hidden hidden flex-col gap-2 pb-4 text-sm font-medium">
+        <li><a class="block rounded-lg px-3 py-2 hover:bg-brand-100/60" href="#about">Qui suis-je</a></li>
+        <li><a class="block rounded-lg px-3 py-2 hover:bg-brand-100/60" href="#services">Services</a></li>
+        <li><a class="block rounded-lg px-3 py-2 hover:bg-brand-100/60" href="#pricing">Tarifs</a></li>
+        <li><a class="block rounded-lg px-3 py-2 hover:bg-brand-100/60" href="#testimonials">Témoignages</a></li>
+        <li><a class="block rounded-lg px-3 py-2 hover:bg-brand-100/60" href="#booking">Réservations</a></li>
+        <li><a class="block rounded-lg px-3 py-2 hover:bg-brand-100/60" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero" class="relative isolate text-white">
+    <div class="absolute inset-0 -z-10 bg-[url('asset/hero.png')] bg-cover bg-center"></div>
+    <div class="absolute inset-0 -z-10 bg-black/50"></div>
+    <div class="mx-auto max-w-6xl px-4 pt-28 pb-28 lg:pt-40 lg:pb-32">
+      <div class="max-w-2xl">
+        <h1 class="text-4xl sm:text-6xl font-semibold leading-tight drop-shadow">Retrouvez votre <span class="block">équilibre naturel</span></h1>
+        <p class="mt-6 text-lg text-white/90 max-w-xl">ChaNmenrO, votre spécialiste en réflexologie et bien-être. Découvrez nos soins personnalisés pour votre santé et votre harmonie intérieure.</p>
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <a href="#booking" class="inline-flex items-center rounded-2xl bg-brand-600 px-6 py-3 text-white shadow-soft hover:bg-brand-700">Prendre rendez-vous</a>
+          <a href="#services" class="inline-flex items-center rounded-2xl border border-white/30 bg-white/10 px-6 py-3 text-white backdrop-blur hover:bg-white/20">Découvrir nos services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-16 lg:py-24 bg-brand-50">
+    <div class="mx-auto max-w-6xl px-4">
+      <!-- Photo centrée -->
+      <div class="mx-auto mb-12 text-center">
+        <div class="mx-auto w-64 sm:w-80 md:w-96 p-4 bg-white/60 rounded-3xl shadow-soft ring-1 ring-brand-100 animate-fadeZoom">
+          <img src="asset/logo.svg" alt="Chanmenro" class="w-full h-auto object-contain"/>
+        </div>
+      </div>
+
+      <div class="grid gap-10 lg:grid-cols-2">
+        <!-- Présentation -->
+        <div>
+          <h2 class="text-3xl font-semibold text-brand-700 mb-4">Menet Chantal</h2>
+          <p class="text-slate-600 leading-relaxed">Technicienne de Spa et de Bien-Être certifiée, je suis spécialisée en réflexologie et praticienne en Maderothérapie. Avec plusieurs années d’expérience, je mets mon expertise au service de votre bien-être et de votre santé.</p>
+          <p class="mt-4 text-slate-600 leading-relaxed">Ma passion pour les thérapies naturelles et mon approche holistique me permettent de vous accompagner dans votre quête d’équilibre et de sérénité.</p>
+          <div class="mt-8 overflow-hidden rounded-2xl shadow-soft ring-1 ring-brand-100">
+            <img src="asset/imgCM.png" alt="Menet Chantal en séance de bien-être" class="w-full h-80 object-cover">
+          </div>
+        </div>
+
+        <!-- Spécialités -->
+        <div class="bg-brand-100 rounded-2xl p-8 shadow-soft">
+          <h3 class="text-2xl font-semibold text-brand-700 mb-6 text-center">Mes Spécialités</h3>
+          <div class="space-y-4">
+            <div class="rounded-xl bg-white/70 p-5 ring-1 ring-brand-200">
+              <h4 class="font-semibold text-slate-900">Réflexologie</h4>
+              <p class="mt-1 text-slate-700 text-sm">Plantaire, Palmaire, Auriculaire, Faciale, Crânienne — techniques pour stimuler les zones réflexes et rétablir l’harmonie.</p>
+            </div>
+            <div class="rounded-xl bg-white/70 p-5 ring-1 ring-brand-200">
+              <h4 class="font-semibold text-slate-900">Maderothérapie</h4>
+              <p class="mt-1 text-slate-700 text-sm">Outils en bois pour sculpter, activer la circulation et favoriser le drainage naturel.</p>
+            </div>
+            <div class="rounded-xl bg-white/70 p-5 ring-1 ring-brand-200">
+              <h4 class="font-semibold text-slate-900">Drainage lymphatique</h4>
+              <p class="mt-1 text-slate-700 text-sm">Manœuvres douces favorisant l’élimination des toxines et la diminution de la rétention d’eau.</p>
+            </div>
+            <div class="rounded-xl bg-white/70 p-5 ring-1 ring-brand-200">
+              <h4 class="font-semibold text-slate-900">Massage bien-être</h4>
+              <p class="mt-1 text-slate-700 text-sm">Massages relaxants et thérapeutiques adaptés pour libérer les tensions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave separator -->
+  <div class="relative">
+    <svg class="absolute -top-1 w-full" viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+      <path fill="#ecfdf5" d="M0,64L48,53.3C96,43,192,21,288,32C384,43,480,85,576,90.7C672,96,768,64,864,64C960,64,1056,96,1152,112C1248,128,1344,128,1392,128L1440,128V0H1392C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0H0Z"></path>
+    </svg>
+  </div>
+
+  <!-- Services -->
+  <section id="services" class="py-16 lg:py-24 bg-white">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="mb-10 flex items-end justify-between gap-6">
+        <div>
+          <h2 class="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">Services</h2>
+          <p class="mt-2 text-slate-600">Sélectionnez un service pour plus de détails.</p>
+        </div>
+        <a href="#pricing" class="hidden sm:inline-flex items-center rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm hover:shadow-soft">Voir les tarifs</a>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Réflexologie -->
+        <article class="group overflow-hidden rounded-2xl border border-brand-100/60 bg-white shadow-soft hover:shadow-ring transition">
+          <div class="relative h-44 w-full overflow-hidden">
+            <img class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" src="asset/reflex.png" alt="Réflexologie plantaire">
+            <span class="absolute right-3 bottom-3 rounded-full bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700 ring-1 ring-brand-200">60 min</span>
+            <button class="absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full bg-white/90 text-brand-700 shadow-soft" aria-label="Favori">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.116-4.312 2.724-.715-1.608-2.377-2.724-4.313-2.724C4.099 3.75 2 5.765 2 8.25c0 7.22 9 12 9 12s10-4.78 10-12z"/></svg>
+            </button>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-brand-700">Réflexologie</h3>
+            <p class="mt-2 text-sm text-slate-600">Stimulation des zones réflexes pour favoriser l’équilibre et la détente.</p>
+            <div class="mt-5 flex items-center justify-between">
+              <span class="text-lg font-semibold text-slate-900">60€</span>
+              <button class="inline-flex items-center text-brand-700 hover:underline" data-detail="reflexo">Détails</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Maderothérapie -->
+        <article class="group overflow-hidden rounded-2xl border border-brand-100/60 bg-white shadow-soft hover:shadow-ring transition">
+          <div class="relative h-44 w-full overflow-hidden">
+            <img class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" src="asset/madero.png" alt="Maderothérapie">
+            <span class="absolute right-3 bottom-3 rounded-full bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700 ring-1 ring-brand-200">30–60 min</span>
+            <button class="absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full bg-white/90 text-brand-700 shadow-soft" aria-label="Favori">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.116-4.312 2.724-.715-1.608-2.377-2.724-4.313-2.724C4.099 3.75 2 5.765 2 8.25c0 7.22 9 12 9 12s10-4.78 10-12z"/></svg>
+            </button>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-brand-700">Maderothérapie</h3>
+            <p class="mt-2 text-sm text-slate-600">Instruments en bois favorisant la circulation et le drainage.</p>
+            <div class="mt-5 flex items-center justify-between">
+              <span class="text-lg font-semibold text-slate-900">35–60€</span>
+              <button class="inline-flex items-center text-brand-700 hover:underline" data-detail="madero">Détails</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Massage bien-être -->
+        <article class="group overflow-hidden rounded-2xl border border-brand-100/60 bg-white shadow-soft hover:shadow-ring transition">
+          <div class="relative h-44 w-full overflow-hidden">
+            <img class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" src="asset/massage.png" alt="Massage bien-être">
+            <span class="absolute right-3 bottom-3 rounded-full bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700 ring-1 ring-brand-200">60–120 min</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-brand-700">Massage bien-être</h3>
+            <p class="mt-2 text-sm text-slate-600">Relâchement musculaire, détente générale, protocole personnalisé.</p>
+            <div class="mt-5 flex items-center justify-between">
+              <span class="text-lg font-semibold text-slate-900">60–105€</span>
+              <button class="inline-flex items-center text-brand-700 hover:underline" data-detail="bienetre">Détails</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Drainage lymphatique -->
+        <article class="group overflow-hidden rounded-2xl border border-brand-100/60 bg-white shadow-soft hover:shadow-ring transition">
+          <div class="relative h-44 w-full overflow-hidden">
+            <img class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" src="asset/drain.png" alt="Drainage lymphatique">
+            <span class="absolute right-3 bottom-3 rounded-full bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700 ring-1 ring-brand-200">30–60 min</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-brand-700">Drainage lymphatique</h3>
+            <p class="mt-2 text-sm text-slate-600">Manœuvres douces pour stimuler le système lymphatique.</p>
+            <div class="mt-5 flex items-center justify-between">
+              <span class="text-lg font-semibold text-slate-900">30–60€</span>
+              <button class="inline-flex items-center text-brand-700 hover:underline" data-detail="drainage">Détails</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Post-opératoire -->
+        <article class="group overflow-hidden rounded-2xl border border-brand-100/60 bg-white shadow-soft hover:shadow-ring transition">
+          <div class="relative h-44 w-full overflow-hidden">
+            <img class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" src="asset/postop.png" alt="Post-opératoire">
+            <span class="absolute right-3 bottom-3 rounded-full bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700 ring-1 ring-brand-200">40–60 min</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-brand-700">Post-opératoire</h3>
+            <p class="mt-2 text-sm text-slate-600">Accompagnement spécifique pour favoriser la récupération (sur avis médical).</p>
+            <div class="mt-5 flex items-center justify-between">
+              <span class="text-lg font-semibold text-slate-900">—</span>
+              <button class="inline-flex items-center text-brand-700 hover:underline" data-detail="postop">Détails</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Massage thaï pieds / jambes -->
+        <article class="group overflow-hidden rounded-2xl border border-brand-100/60 bg-white shadow-soft hover:shadow-ring transition">
+          <div class="relative h-44 w-full overflow-hidden">
+            <img class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" src="asset/thai.png" alt="Massage thaï pieds et jambes">
+            <span class="absolute right-3 bottom-3 rounded-full bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700 ring-1 ring-brand-200">40–60 min</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-brand-700">Massage thaï pieds / jambes</h3>
+            <p class="mt-2 text-sm text-slate-600">Travail ciblé pour légèreté et circulation.</p>
+            <div class="mt-5 flex items-center justify-between">
+              <span class="text-lg font-semibold text-slate-900">35–60€</span>
+              <button class="inline-flex items-center text-brand-700 hover:underline" data-detail="thai">Détails</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- CTA services -->
+      <div class="mt-10 grid items-center gap-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-soft md:grid-cols-3">
+        <p class="md:col-span-2 text-slate-700">Besoin d’aide pour choisir votre soin&nbsp;? Je vous conseille selon vos objectifs (détente, récupération, drainage…).</p>
+        <div class="text-right">
+          <a href="#booking" class="inline-flex items-center rounded-xl bg-brand-600 px-5 py-3 text-white hover:bg-brand-700">Prendre rendez-vous</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tarifs -->
+  <section id="pricing" class="py-16 lg:py-24 bg-brand-50 rounded-b-[6rem]">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="mb-10 text-center">
+        <h2 class="text-3xl font-semibold tracking-tight text-slate-900">Tarifs</h2>
+        <p class="mt-2 text-slate-600">Transparents, lisibles et sans surprise.</p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <!-- MADEROTHERAPIE -->
+        <div class="rounded-2xl bg-white p-6 shadow-soft ring-1 ring-slate-100">
+          <h3 class="text-lg font-semibold text-brand-700">Maderothérapie</h3>
+          <ul class="mt-4 divide-y divide-slate-100">
+            <li class="py-2 flex items-baseline justify-between"><span class="text-sm text-slate-700">Corps entier ou zones ciblées · 1h</span><span class="font-semibold text-slate-900">60€</span></li>
+            <li class="py-2 flex justify-between"><span class="text-sm text-slate-700">Bras · 30 min</span><span class="font-semibold">35€</span></li>
+            <li class="py-2 flex justify-between"><span class="text-sm text-slate-700">Ventre · 30 min</span><span class="font-semibold">35€</span></li>
+            <li class="py-2 flex justify-between"><span class="text-sm text-slate-700">Jambes · 30 min</span><span class="font-semibold">35€</span></li>
+            <li class="py-2 flex justify-between"><span class="text-sm text-slate-700">Ventre + jambes · 40 min</span><span class="font-semibold">45€</span></li>
+          </ul>
+          <div class="mt-5 rounded-xl bg-brand-50/60 p-4 ring-1 ring-brand-200">
+            <p class="text-sm font-medium text-brand-700">Cures</p>
+            <ul class="mt-2 space-y-1 text-sm text-slate-700">
+              <li class="flex justify-between"><span>Cure 3 séances</span><span class="font-semibold text-slate-900">165€</span></li>
+              <li class="flex justify-between"><span>Cure 5 séances</span><span class="font-semibold text-slate-900">250€</span></li>
+              <li class="flex justify-between"><span>Cure 10 séances</span><span class="font-semibold text-slate-900">450€</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- DRAINAGE -->
+        <div class="rounded-2xl bg-white p-6 shadow-soft ring-1 ring-slate-100">
+          <h3 class="text-lg font-semibold text-brand-700">Drainage lymphatique</h3>
+          <ul class="mt-4 divide-y divide-slate-100">
+            <li class="py-2 flex justify-between"><span class="text-sm text-slate-700">Corps entier ou zone ciblée · 1h</span><span class="font-semibold">60€</span></li>
+            <li class="py-2 flex justify-between"><span class="text-sm text-slate-700">Bras · 30 min</span><span class="font-semibold">30€</span></li>
+            <li class="py-2 flex justify-between"><span class="text-sm text-slate-700">Ventre · 30 min</span><span class="font-semibold">30€</span></li>
+            <li class="py-2 flex justify-between"><span class="text-sm text-slate-700">Jambes · 30 min</span><span class="font-semibold">30€</span></li>
+            <li class="py-2 flex justify-between"><span class="text-sm text-slate-700">Ventre + jambes · 40 min</span><span class="font-semibold">40€</span></li>
+          </ul>
+        </div>
+
+        <!-- SPORTIF -->
+        <div class="rounded-2xl bg-white p-6 shadow-soft ring-1 ring-slate-100">
+          <h3 class="text-lg font-semibold text-brand-700">Massage sportif</h3>
+          <ul class="mt-4 divide-y divide-slate-100">
+            <li class="py-2 flex justify-between"><span class="text-sm text-slate-700">“Après” récupération · Corps entier · 1h</span><span class="font-semibold">60€</span></li>
+            <li class="py-2 flex justify-between"><span class="text-sm text-slate-700">Jambes · 30 min</span><span class="font-semibold">35€</span></li>
+            <li class="py-2 flex justify-between"><span class="text-sm text-slate-700">Bras · 30 min</span><span class="font-semibold">35€</span></li>
+            <li class="py-2 flex justify-between"><span class="text-sm text-slate-700">Jambes + bras · 40 min</span><span class="font-semibold">45€</span></li>
+            <li class="py-2 flex justify-between"><span class="text-sm text-slate-700">“Avant” préparation · Corps entier · 1h</span><span class="font-semibold">60€</span></li>
+          </ul>
+        </div>
+
+        <!-- BIEN-ÊTRE -->
+        <div class="rounded-2xl bg-white p-6 shadow-soft ring-1 ring-slate-100">
+          <h3 class="text-lg font-semibold text-brand-700">Massage bien-être</h3>
+          <ul class="mt-4 divide-y divide-slate-100">
+            <li class="py-2 flex justify-between"><span class="text-sm text-slate-700">Zones ciblées ou corps entier · 1h</span><span class="font-semibold">60€</span></li>
+            <li class="py-2 flex justify-between"><span class="text-sm text-slate-700">Zones ciblées ou corps entier · 2h</span><span class="font-semibold">105€</span></li>
+            <li class="py-2 flex justify-between"><span class="text-sm text-slate-700">Visage · 1h</span><span class="font-semibold">60€</span></li>
+            <li class="py-2 flex justify-between"><span class="text-sm text-slate-700">Plantaire THAÏ · 1h</span><span class="font-semibold">60€</span></li>
+            <li class="py-2 flex justify-between"><span class="text-sm text-slate-700">Plantaire BOL-KANSU · 1h</span><span class="font-semibold">60€</span></li>
+            <li class="py-2 flex justify-between"><span class="text-sm text-slate-700">Plantaire · 1h</span><span class="font-semibold">60€</span></li>
+            <li class="py-2 flex justify-between"><span class="text-sm text-slate-700">Palmaire</span><span class="font-semibold">60€</span></li>
+            <li class="py-2 flex justify-between"><span class="text-sm text-slate-700">Crânienne</span><span class="font-semibold">60€</span></li>
+          </ul>
+        </div>
+
+        <!-- COMBINÉE -->
+        <div class="rounded-2xl bg-white p-6 shadow-soft ring-1 ring-slate-100">
+          <h3 class="text-lg font-semibold text-brand-700">Réflexologie combinée</h3>
+          <ul class="mt-4 divide-y divide-slate-100">
+            <li class="py-2 flex justify-between"><span class="text-sm text-slate-700">Planto / Auriculaire · 1h</span><span class="font-semibold">60€</span></li>
+            <li class="py-2 flex justify-between"><span class="text-sm text-slate-700">Palmo / Auriculaire · 1h</span><span class="font-semibold">60€</span></li>
+            <li class="py-2 flex justify-between"><span class="text-sm text-slate-700">Facio / Crânienne · 1h</span><span class="font-semibold">60€</span></li>
+          </ul>
+        </div>
+
+        <!-- CURES REFLEXO -->
+        <div class="rounded-2xl bg-white p-6 shadow-soft ring-1 ring-slate-100">
+          <h3 class="text-lg font-semibold text-brand-700">Réflexologie · Cures</h3>
+          <ul class="mt-4 space-y-2 text-sm text-slate-700">
+            <li class="flex justify-between"><span>Cure 3 séances · 1h</span><span class="font-semibold text-slate-900">165€</span></li>
+            <li class="flex justify-between"><span>Cure 5 séances · 1h</span><span class="font-semibold text-slate-900">250€</span></li>
+            <li class="flex justify-between"><span>Cure 10 séances · 1h</span><span class="font-semibold text-slate-900">450€</span></li>
+          </ul>
+        </div>
+
+        <!-- JEUNES PUBLICS -->
+        <div class="rounded-2xl bg-white p-6 shadow-soft ring-1 ring-slate-100 md:col-span-2 lg:col-span-3">
+          <h3 class="text-lg font-semibold text-brand-700">Réflexologie · Jeunes publics</h3>
+          <div class="mt-4 grid gap-6 md:grid-cols-3">
+            <div>
+              <h4 class="text-sm font-medium text-slate-900">Adolescents · 13 à 18 ans</h4>
+              <ul class="mt-2 space-y-1 text-sm text-slate-700">
+                <li class="flex justify-between"><span>Séances · 1h</span><span class="font-semibold">50€</span></li>
+                <li class="flex justify-between"><span>Cure 3 séances</span><span class="font-semibold">135€</span></li>
+                <li class="flex justify-between"><span>Cure 5 séances</span><span class="font-semibold">230€</span></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-sm font-medium text-slate-900">Enfants · 3 à 12 ans</h4>
+              <ul class="mt-2 space-y-1 text-sm text-slate-700">
+                <li class="flex justify-between"><span>Séances · 30–40 min</span><span class="font-semibold">40€</span></li>
+                <li class="flex justify-between"><span>Cure 3 séances</span><span class="font-semibold">105€</span></li>
+                <li class="flex justify-between"><span>Cure 5 séances</span><span class="font-semibold">180€</span></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-sm font-medium text-slate-900">Naissance à 36 mois</h4>
+              <ul class="mt-2 space-y-1 text-sm text-slate-700">
+                <li class="flex justify-between"><span>Séances · 15–20 min</span><span class="font-semibold">35€</span></li>
+                <li class="flex justify-between"><span>Cure 3 séances</span><span class="font-semibold">90€</span></li>
+                <li class="flex justify-between"><span>Cure 5 séances</span><span class="font-semibold">155€</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Appel à l’action -->
+  <section id="cta" class="py-20 bg-white">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="rounded-3xl bg-brand-50 px-8 py-12 text-center shadow-soft">
+        <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">Prêt à commencer votre voyage vers le bien-être ?</h2>
+        <p class="mt-3 text-slate-600">Contactez-moi pour prendre rendez-vous et profiter d’un moment rien que pour vous.</p>
+        <div class="mt-6 flex items-center justify-center gap-3 text-brand-700 text-xl font-semibold">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M2.25 6.75c0 8.284 6.716 15 15 15 .84 0 1.673-.07 2.484-.206a1.125 1.125 0 00.948-1.11v-3.44a1.125 1.125 0 00-.997-1.117l-3.687-.41a1.125 1.125 0 00-1.115.625l-.875 1.75a11.25 11.25 0 01-5.832-5.832l1.75-.875a1.125 1.125 0 00.625-1.115l-.41-3.687A1.125 1.125 0 009.006 3.2H5.566a1.125 1.125 0 00-1.11.948A15.21 15.21 0 004.25 6.75z"/></svg>
+          <a href="tel:0650241036" class="hover:underline">06 50 24 10 36</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galerie 9:16 -->
+  <section id="gallery" class="py-16 lg:py-24 bg-white">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="mb-8 flex items-end justify-between gap-4">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">Galerie</h2>
+          <p class="mt-2 text-slate-600">Aperçu de quelques soins en images.</p>
+        </div>
+        <div class="hidden sm:flex items-center gap-2">
+          <button id="galPrev" class="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 bg-white hover:bg-slate-50">‹</button>
+          <button id="galNext" class="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 bg-white hover:bg-slate-50">›</button>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div id="galTrack" tabindex="0" class="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar">
+          <!-- Slides -->
+          <figure class="group snap-center shrink-0 w-56 sm:w-64 md:w-72">
+            <div class="aspect-[9/16] overflow-hidden rounded-2xl ring-1 ring-slate-100 shadow-soft">
+              <img src="galerie/1.png" alt="Réflexologie" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" data-full="galerie/1.png">
+            </div>
+            <figcaption class="mt-2 text-sm text-center text-slate-700">Réflexologie</figcaption>
+          </figure>
+
+          <figure class="group snap-center shrink-0 w-56 sm:w-64 md:w-72">
+            <div class="aspect-[9/16] overflow-hidden rounded-2xl ring-1 ring-slate-100 shadow-soft">
+              <img src="galerie/2.png" alt="Massage abdominal" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" data-full="galerie/2.png">
+            </div>
+            <figcaption class="mt-2 text-sm text-center text-slate-700">Massage abdominal</figcaption>
+          </figure>
+
+          <figure class="group snap-center shrink-0 w-56 sm:w-64 md:w-72">
+            <div class="aspect-[9/16] overflow-hidden rounded-2xl ring-1 ring-slate-100 shadow-soft">
+              <img src="galerie/3.png" alt="Maderothérapie" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" data-full="galerie/3.png">
+            </div>
+            <figcaption class="mt-2 text-sm text-center text-slate-700">Maderothérapie</figcaption>
+          </figure>
+
+          <figure class="group snap-center shrink-0 w-56 sm:w-64 md:w-72">
+            <div class="aspect-[9/16] overflow-hidden rounded-2xl ring-1 ring-slate-100 shadow-soft">
+              <img src="galerie/4.png" alt="Massage Thai" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" data-full="galerie/4.png">
+            </div>
+            <figcaption class="mt-2 text-sm text-center text-slate-700">Massage Thai</figcaption>
+          </figure>
+
+          <figure class="group snap-center shrink-0 w-56 sm:w-64 md:w-72">
+            <div class="aspect-[9/16] overflow-hidden rounded-2xl ring-1 ring-slate-100 shadow-soft">
+              <img src="galerie/5.png" alt="Maderothérapie" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" data-full="galerie/5.png">
+            </div>
+            <figcaption class="mt-2 text-sm text-center text-slate-700">Maderothérapie</figcaption>
+          </figure>
+
+          <figure class="group snap-center shrink-0 w-56 sm:w-64 md:w-72">
+            <div class="aspect-[9/16] overflow-hidden rounded-2xl ring-1 ring-slate-100 shadow-soft">
+              <img src="galerie/6.png" alt="Massage" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" data-full="galerie/6.png">
+            </div>
+            <figcaption class="mt-2 text-sm text-center text-slate-700">Massage</figcaption>
+          </figure>
+        </div>
+
+        <!-- Dots -->
+        <div id="galDots" class="mt-6 flex justify-center gap-2"></div>
+
+        <!-- Flèches mobiles -->
+        <div class="mt-4 flex justify-center gap-3 sm:hidden">
+          <button id="galPrevM" class="rounded-xl border border-slate-200 bg-white px-4 py-2">‹</button>
+          <button id="galNextM" class="rounded-xl border border-slate-200 bg-white px-4 py-2">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Témoignages -->
+  <section id="testimonials" class="py-16 lg:py-24 bg-gradient-to-b from-white to-brand-50/60">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">Témoignages</h2>
+        <p class="mt-2 text-slate-600">Ils et elles racontent leur expérience chez ChaNmenrO.</p>
+      </div>
+
+      <div class="flex md:grid md:grid-cols-3 gap-4 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none no-scrollbar">
+        <article class="snap-center shrink-0 md:shrink bg-white rounded-2xl p-6 shadow-soft ring-1 ring-slate-100">
+          <div class="flex items-center gap-3">
+            <img src="https://i.pravatar.cc/64?img=11" alt="" class="h-10 w-10 rounded-full object-cover">
+            <div><p class="font-semibold text-slate-900">Claire D.</p><p class="text-xs text-slate-500">Réflexologie plantaire</p></div>
+          </div>
+          <div class="mt-4 text-brand-600" aria-label="5 sur 5">★★★★★</div>
+          <blockquote class="mt-3 text-slate-700">“Accueil doux et à l’écoute. Après la séance, j’ai dormi comme un bébé et mes jambes sont plus légères.”</blockquote>
+        </article>
+
+        <article class="snap-center shrink-0 md:shrink bg-white rounded-2xl p-6 shadow-soft ring-1 ring-slate-100">
+          <div class="flex items-center gap-3">
+            <img src="https://i.pravatar.cc/64?img=5" alt="" class="h-10 w-10 rounded-full object-cover">
+            <div><p class="font-semibold text-slate-900">Sophie L.</p><p class="text-xs text-slate-500">Drainage lymphatique</p></div>
+          </div>
+          <div class="mt-4 text-brand-600" aria-label="5 sur 5">★★★★★</div>
+          <blockquote class="mt-3 text-slate-700">“Résultats visibles sur la rétention d’eau. Cadre apaisant et conseils personnalisés.”</blockquote>
+        </article>
+
+        <article class="snap-center shrink-0 md:shrink bg-white rounded-2xl p-6 shadow-soft ring-1 ring-slate-100">
+          <div class="flex items-center gap-3">
+            <img src="https://i.pravatar.cc/64?img=32" alt="" class="h-10 w-10 rounded-full object-cover">
+            <div><p class="font-semibold text-slate-900">Julie R.</p><p class="text-xs text-slate-500">Massage bien-être</p></div>
+          </div>
+          <div class="mt-4 text-brand-600" aria-label="5 sur 5">★★★★★</div>
+          <blockquote class="mt-3 text-slate-700">“Un vrai moment pour soi. Tensions envolées, je recommande à 100%.”</blockquote>
+        </article>
+      </div>
+
+      <div class="mt-8 text-center">
+        <a href="#booking" class="inline-flex items-center rounded-xl bg-brand-600 px-5 py-3 text-white shadow-soft hover:bg-brand-700">Prendre rendez-vous</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Réservations (CTA simple) -->
+  <section id="booking" class="py-16 lg:py-20 bg-white">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="grid items-center gap-6 rounded-2xl border border-slate-200 bg-white p-8 shadow-soft lg:grid-cols-3">
+        <div class="lg:col-span-2">
+          <h3 class="text-xl font-semibold text-slate-900">Prendre rendez-vous</h3>
+          <p class="mt-2 text-slate-600">Choisissez votre service et votre créneau. Intégration possible avec un agenda (Calendly, Doctolib, Google Agenda…)</p>
+        </div>
+        <div class="text-right">
+          <a href="#contact" class="inline-flex items-center rounded-xl bg-brand-600 px-5 py-3 text-white shadow-soft hover:bg-brand-700">Me contacter</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+<!-- Contact -->
+<section id="contact" class="py-16 lg:py-24">
+  <div class="mx-auto max-w-6xl px-4">
+    <div class="grid gap-10 lg:grid-cols-2">
+      
+      <!-- Formulaire -->
+      <div>
+        <h2 class="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">Contact</h2>
+        <p class="mt-2 text-slate-600">Laissez-moi un message, je vous répondrai rapidement.</p>
+        <form class="mt-6 space-y-4" id="contactForm">
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div>
+              <label class="block text-sm text-slate-700">Nom *</label>
+              <input type="text" required class="mt-1 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 shadow-soft focus:outline-none focus:ring-2 focus:ring-brand-400" />
+            </div>
+            <div>
+              <label class="block text-sm text-slate-700">Email *</label>
+              <input type="email" required class="mt-1 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 shadow-soft focus:outline-none focus:ring-2 focus:ring-brand-400" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm text-slate-700">Téléphone</label>
+            <input type="tel" class="mt-1 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 shadow-soft focus:outline-none focus:ring-2 focus:ring-brand-400" />
+          </div>
+          <div>
+            <label class="block text-sm text-slate-700">Message *</label>
+            <textarea required rows="4" class="mt-1 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 shadow-soft focus:outline-none focus:ring-2 focus:ring-brand-400"></textarea>
+          </div>
+          <button type="submit" class="inline-flex items-center rounded-xl bg-brand-600 px-5 py-2.5 text-white hover:bg-brand-700">Envoyer</button>
+          <p id="formMsg" class="hidden text-sm text-brand-700">Merci ! Votre message a bien été envoyé.</p>
+        </form>
+      </div>
+
+      <!-- Coordonnées -->
+      <div>
+        <div class="aspect-[4/3] w-full rounded-2xl bg-white shadow-soft ring-1 ring-slate-100 overflow-hidden">
+          <iframe 
+            src="https://www.google.com/maps?q=29+Rue+du+Chemin+Vert,+59770+Marly&output=embed"
+            class="w-full h-full border-0" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+
+        <div class="mt-6 grid gap-4 text-sm text-slate-700">
+          <div class="flex items-start gap-3">
+            <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand-100 text-brand-700">📍</span>
+            <div>
+              <p class="font-semibold text-slate-900">ChaNmenrO</p>
+              <p>29 rue du chemin vert<br>59770 Marly</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand-100 text-brand-700">⏰</span>
+            <div>
+              <p class="font-semibold text-slate-900">Horaires d’ouverture</p>
+              <ul class="mt-1 space-y-0.5">
+                <li>🗓️ Lundi : 8h – 21h</li>
+                <li>Mardi : 8h – 21h</li>
+                <li>Mercredi : 8h – 21h</li>
+                <li>Jeudi : 8h – 21h</li>
+                <li>Vendredi : 8h – 21h</li>
+                <li>Samedi : 10h – 18h</li>
+                <li>Dimanche : Fermé</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand-100 text-brand-700">📞</span>
+            <div>
+              <p class="font-semibold text-slate-900">Contact</p>
+              <p><a href="tel:0650241036" class="text-brand-700 hover:underline">06&nbsp;50&nbsp;24&nbsp;10&nbsp;36</a></p>
+              <p><a href="mailto:chanmenro.marly@gmail.com" class="text-brand-700 hover:underline">chanmenro.marly@gmail.com</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer class="border-t border-white/60 bg-white/70 glass">
+    <div class="mx-auto max-w-6xl px-4 py-10 text-sm text-slate-600">
+      <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
+        <p>© <span id="y"></span> ChaNmenrO — Tous droits réservés.</p>
+        <div class="flex items-center gap-4">
+          <a href="#contact" class="hover:underline">Contact</a>
+          <a href="#privacy" class="hover:underline">Confidentialité</a>
+          <a href="#conditions" class="hover:underline">Conditions générales</a>
+          <a href="#rgpd" class="hover:underline">RGPD</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modale détails services -->
+  <div id="detailModal" class="fixed inset-0 z-50 hidden bg-black/40">
+    <div class="absolute inset-0 flex items-center justify-center p-4">
+      <div class="w-full max-w-lg rounded-2xl bg-white p-6 shadow-soft relative animate-[fadeIn_.3s_ease_forwards]">
+        <button id="detailClose" class="absolute top-3 right-3 rounded-lg p-2 text-slate-500 hover:bg-slate-100" aria-label="Fermer">✖</button>
+        <div>
+          <h3 id="detailTitle" class="text-lg font-semibold text-slate-900">Titre service</h3>
+          <p id="detailBody" class="mt-2 text-slate-600">Texte de détail…</p>
+        </div>
+        <div class="mt-6 text-right">
+          <a href="#booking" class="inline-flex items-center rounded-xl bg-brand-600 px-4 py-2 text-white hover:bg-brand-700">Réserver</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modales RGPD / Confidentialité / Conditions -->
+  <div id="rgpdModal" class="fixed inset-0 z-[70] hidden bg-black/40">
+    <div class="absolute inset-0 flex items-center justify-center p-4">
+      <div role="dialog" aria-modal="true" aria-labelledby="rgpdTitle" class="w-full max-w-3xl rounded-2xl bg-white p-6 shadow-soft ring-1 ring-slate-200">
+        <div class="flex items-start justify-between gap-6">
+          <div>
+            <h3 id="rgpdTitle" class="text-xl font-semibold text-slate-900">Information</h3>
+            <p class="mt-2 text-slate-700">Nous utilisons des cookies pour améliorer votre expérience sur notre site. Découvrez comment ils nous aident à vous offrir une navigation plus agréable et respectueuse de votre confidentialité.</p>
+          </div>
+          <button id="rgpdClose" class="rounded-lg p-2 text-slate-500 hover:bg-slate-100" aria-label="Fermer">✖</button>
+        </div>
+        <div class="mt-6 max-h-[60vh] overflow-y-auto pr-1">
+          <h4 class="text-lg font-semibold text-slate-900">Questions fréquentes</h4>
+          <p class="mt-2 text-slate-700">Nous avons rassemblé les questions les plus courantes concernant l'utilisation des cookies sur notre site ChaNmenrO. Apprenez-en davantage sur leur fonctionnement et leur impact sur votre navigation.</p>
+          <div class="mt-6 space-y-6">
+            <div>
+              <h5 class="font-medium text-slate-900">En quoi les cookies améliorent l’expérience ?</h5>
+              <p class="mt-2 text-slate-700">Ils permettent d’améliorer la qualité du site et votre confort de navigation. Vous pouvez accepter ou refuser les cookies à tout moment via le bandeau affiché lors de la visite.</p>
+            </div>
+            <div>
+              <h5 class="font-medium text-slate-900">Vos préférences</h5>
+              <ul class="mt-3 space-y-1 text-slate-700">
+                <li>✅ Accepter tous les cookies</li>
+                <li>⚙️ Personnaliser vos choix</li>
+                <li>❌ Refuser les cookies non essentiels</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="mt-6 flex flex-wrap items-center justify-end gap-2">
+          <button id="rgpdClose2" class="rounded-xl border border-slate-200 px-4 py-2 text-slate-700 hover:bg-slate-100">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="privacyModal" class="fixed inset-0 z-[70] hidden bg-black/40">
+    <div class="absolute inset-0 flex items-center justify-center p-4">
+      <div role="dialog" aria-modal="true" aria-labelledby="privacyTitle" class="w-full max-w-3xl rounded-2xl bg-white p-6 shadow-soft ring-1 ring-slate-200">
+        <div class="flex items-start justify-between gap-6">
+          <div>
+            <h3 id="privacyTitle" class="text-xl font-semibold text-slate-900">Politique de confidentialité & données personnelles</h3>
+            <p class="mt-2 text-slate-700">Votre vie privée est importante pour ChaNmenrO. Cette page explique comment nous collectons, utilisons et protégeons vos données.</p>
+          </div>
+          <button id="privacyClose" class="rounded-lg p-2 text-slate-500 hover:bg-slate-100" aria-label="Fermer">✖</button>
+        </div>
+        <div class="mt-6 max-h-[60vh] overflow-y-auto pr-1 space-y-6">
+          <section><h4 class="text-lg font-semibold text-slate-900">Quelles informations collectons-nous ?</h4><p class="mt-2 text-slate-700">Uniquement ce qui est nécessaire pour communiquer, gérer les rendez-vous et améliorer le site. Pas de données médicales/bancaires sensibles. Aucune vente/partage à des tiers.</p></section>
+          <section><h4 class="text-lg font-semibold text-slate-900">Comment utilisons-nous vos informations ?</h4><p class="mt-2 text-slate-700">Pour mieux vous accompagner, améliorer le site et, si vous l’avez choisi, vous informer. Aucune revente ni partage de vos données.</p></section>
+          <section><h4 class="text-lg font-semibold text-slate-900">Sécurité des données</h4><p class="mt-2 text-slate-700">Mesures techniques et organisationnelles pour empêcher l’accès non autorisé, la perte ou la destruction.</p></section>
+        </div>
+        <div class="mt-6 flex flex-wrap items-center justify-end gap-2">
+          <button id="privacyClose2" class="rounded-xl border border-slate-200 px-4 py-2 text-slate-700 hover:bg-slate-100">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- MODALE CONDITIONS GÉNÉRALES (version cartes + accordéon) -->
+<div id="conditionsModal" class="fixed inset-0 z-[70] hidden bg-black/40">
+  <div class="absolute inset-0 flex items-center justify-center p-4">
+    <div role="dialog" aria-modal="true" aria-labelledby="conditionsTitle"
+         class="w-full max-w-4xl rounded-3xl bg-white p-0 shadow-soft ring-1 ring-slate-200 overflow-hidden">
+
+      <!-- Header collant -->
+      <div class="sticky top-0 z-10 flex items-start justify-between gap-6 bg-white/80 backdrop-blur px-6 py-5 border-b">
+        <div class="flex items-center gap-3">
+          <span class="grid h-10 w-10 place-items-center rounded-xl bg-brand-100 text-brand-700 shadow-soft">📋</span>
+          <div>
+            <h3 id="conditionsTitle" class="text-xl font-semibold text-slate-900">Conditions générales</h3>
+            <p class="text-sm text-slate-600">Transparence & clarté pour une expérience sereine.</p>
+          </div>
+        </div>
+        <button id="conditionsClose" class="rounded-lg p-2 text-slate-500 hover:bg-slate-100" aria-label="Fermer">✖</button>
+      </div>
+
+      <!-- Bandeau info -->
+      <div class="px-6 pt-5">
+        <div class="rounded-2xl bg-brand-50/70 ring-1 ring-brand-100 p-4">
+          <p class="text-sm text-slate-700">
+            Retrouvez ci-dessous les points essentiels (paiement, annulation, confidentialité, etc.). 
+            En cas de question, <a href="#contact" class="text-brand-700 underline">contactez-moi</a>.
+          </p>
+        </div>
+      </div>
+
+      <!-- Contenu scrollable -->
+      <div class="mt-6 max-h-[65vh] overflow-y-auto px-6 pb-6 pr-5 space-y-8">
+
+        <!-- Cartes principales -->
+        <section>
+          <h4 class="text-lg font-semibold text-slate-900 mb-4">Essentiels</h4>
+          <div class="grid gap-4 sm:grid-cols-2">
+            
+            <!-- Carte Paiement -->
+            <article class="rounded-2xl border border-slate-100 bg-white p-5 shadow-soft hover:shadow-ring transition">
+              <div class="flex items-start gap-3">
+                <span class="grid h-10 w-10 place-items-center rounded-xl bg-emerald-50 text-emerald-700">💶</span>
+                <div>
+                  <h5 class="font-medium text-slate-900">Paiement</h5>
+                  <p class="mt-1 text-sm text-slate-700">
+                    Règlement en fin de séance, espèces ou chèque. 
+                    Cartes cadeaux valables 12&nbsp;mois, non remboursables.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Carte Annulation -->
+            <article class="rounded-2xl border border-slate-100 bg-white p-5 shadow-soft hover:shadow-ring transition">
+              <div class="flex items-start gap-3">
+                <span class="grid h-10 w-10 place-items-center rounded-xl bg-amber-50 text-amber-700">🕒</span>
+                <div>
+                  <h5 class="font-medium text-slate-900">Annulation / report</h5>
+                  <p class="mt-1 text-sm text-slate-700">
+                    Prévenir <strong>24&nbsp;h à l’avance</strong>. 
+                    Au-delà, le créneau réservé peut être dû.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Carte Tenue & pudeur -->
+            <article class="rounded-2xl border border-slate-100 bg-white p-5 shadow-soft hover:shadow-ring transition">
+              <div class="flex items-start gap-3">
+                <span class="grid h-10 w-10 place-items-center rounded-xl bg-sky-50 text-sky-700">🧘‍♀️</span>
+                <div>
+                  <h5 class="font-medium text-slate-900">Tenue & pudeur</h5>
+                  <p class="mt-1 text-sm text-slate-700">
+                    Sous-vêtements conservés. Zones découvertes uniquement pendant le soin puis recouvertes.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Carte Conduite appropriée -->
+            <article class="rounded-2xl border border-slate-100 bg-white p-5 shadow-soft hover:shadow-ring transition">
+              <div class="flex items-start gap-3">
+                <span class="grid h-10 w-10 place-items-center rounded-xl bg-rose-50 text-rose-700">🚫</span>
+                <div>
+                  <h5 class="font-medium text-slate-900">Aucune connotation sexuelle</h5>
+                  <p class="mt-1 text-sm text-slate-700">
+                    Prestations strictement professionnelles. 
+                    Toute attitude inappropriée =&nbsp;fin immédiate de séance (sans remboursement).
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Carte Mutuelles -->
+            <article class="rounded-2xl border border-slate-100 bg-white p-5 shadow-soft hover:shadow-ring transition">
+              <div class="flex items-start gap-3">
+                <span class="grid h-10 w-10 place-items-center rounded-xl bg-indigo-50 text-indigo-700">💳</span>
+                <div>
+                  <h5 class="font-medium text-slate-900">Remboursement mutuelle</h5>
+                  <p class="mt-1 text-sm text-slate-700">
+                    Certaines mutuelles remboursent la réflexologie. 
+                    Facture nominative possible sur demande.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Carte Cadre non médical -->
+            <article class="rounded-2xl border border-slate-100 bg-white p-5 shadow-soft hover:shadow-ring transition">
+              <div class="flex items-start gap-3">
+                <span class="grid h-10 w-10 place-items-center rounded-xl bg-fuchsia-50 text-fuchsia-700">⚕️</span>
+                <div>
+                  <h5 class="font-medium text-slate-900">Cadre non médical</h5>
+                  <p class="mt-1 text-sm text-slate-700">
+                    Soins non médicaux, sans visée thérapeutique. 
+                    Ils complètent un suivi de santé, ne le remplacent pas.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Carte Confidentialité -->
+            <article class="rounded-2xl border border-slate-100 bg-white p-5 shadow-soft hover:shadow-ring transition">
+              <div class="flex items-start gap-3">
+                <span class="grid h-10 w-10 place-items-center rounded-xl bg-teal-50 text-teal-700">🔒</span>
+                <div>
+                  <h5 class="font-medium text-slate-900">Confidentialité</h5>
+                  <p class="mt-1 text-sm text-slate-700">
+                    Données et échanges strictement confidentiels. 
+                    Aucune revente ni partage à des tiers.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Carte Tarifs -->
+            <article class="rounded-2xl border border-slate-100 bg-white p-5 shadow-soft hover:shadow-ring transition">
+              <div class="flex items-start gap-3">
+                <span class="grid h-10 w-10 place-items-center rounded-xl bg-slate-50 text-slate-700">💰</span>
+                <div>
+                  <h5 class="font-medium text-slate-900">Tarifs</h5>
+                  <p class="mt-1 text-sm text-slate-700">
+                    Affichés en € TTC (non soumis à TVA – Art. 293&nbsp;B du CGI). 
+                    Cartes cadeaux&nbsp;: valables 6&nbsp;mois, non remboursables.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- Accordéon (FAQ détaillée) -->
+        <section>
+          <h4 class="text-lg font-semibold text-slate-900 mb-4">Questions fréquentes (détails)</h4>
+          <div class="space-y-3">
+
+            <details class="group rounded-2xl border border-slate-100 bg-white p-4 open:shadow-soft">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
+                <span class="font-medium text-slate-900">Comment puis-je payer ma séance ?</span>
+                <span class="text-slate-400 group-open:rotate-180 transition">⌄</span>
+              </summary>
+              <p class="mt-2 text-sm text-slate-700">
+                Paiement en fin de séance (espèces ou chèque). Cartes cadeaux valables 12&nbsp;mois, non remboursables.
+              </p>
+            </details>
+
+            <details class="group rounded-2xl border border-slate-100 bg-white p-4 open:shadow-soft">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
+                <span class="font-medium text-slate-900">Et si je dois annuler ou reporter ?</span>
+                <span class="text-slate-400 group-open:rotate-180 transition">⌄</span>
+              </summary>
+              <p class="mt-2 text-sm text-slate-700">
+                Prévenir au moins 24&nbsp;h à l’avance. Passé ce délai, le créneau réservé peut être dû.
+              </p>
+            </details>
+
+            <details class="group rounded-2xl border border-slate-100 bg-white p-4 open:shadow-soft">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
+                <span class="font-medium text-slate-900">Dois-je me déshabiller ?</span>
+                <span class="text-slate-400 group-open:rotate-180 transition">⌄</span>
+              </summary>
+              <p class="mt-2 text-sm text-slate-700">
+                Non. Les sous-vêtements sont conservés. Les zones massées sont dévoilées uniquement pendant le soin, puis recouvertes.
+              </p>
+            </details>
+
+            <details class="group rounded-2xl border border-slate-100 bg-white p-4 open:shadow-soft">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
+                <span class="font-medium text-slate-900">Connotation sexuelle ?</span>
+                <span class="text-slate-400 group-open:rotate-180 transition">⌄</span>
+              </summary>
+              <p class="mt-2 text-sm text-slate-700">
+                Aucune. Toute attitude inappropriée met fin à la séance sans remboursement et peut entraîner des suites.
+              </p>
+            </details>
+
+            <details class="group rounded-2xl border border-slate-100 bg-white p-4 open:shadow-soft">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
+                <span class="font-medium text-slate-900">Remboursement par ma mutuelle ?</span>
+                <span class="text-slate-400 group-open:rotate-180 transition">⌄</span>
+              </summary>
+              <p class="mt-2 text-sm text-slate-700">
+                Certaines mutuelles remboursent partiellement la réflexologie. Facture nominative fournie sur demande.
+              </p>
+            </details>
+
+            <details class="group rounded-2xl border border-slate-100 bg-white p-4 open:shadow-soft">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
+                <span class="font-medium text-slate-900">Est-ce un acte médical ?</span>
+                <span class="text-slate-400 group-open:rotate-180 transition">⌄</span>
+              </summary>
+              <p class="mt-2 text-sm text-slate-700">
+                Non. Les soins sont non médicaux et sans visée thérapeutique. Ils complètent un suivi médical.
+              </p>
+            </details>
+
+            <details class="group rounded-2xl border border-slate-100 bg-white p-4 open:shadow-soft">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
+                <span class="font-medium text-slate-900">Mes informations sont-elles confidentielles ?</span>
+                <span class="text-slate-400 group-open:rotate-180 transition">⌄</span>
+              </summary>
+              <p class="mt-2 text-sm text-slate-700">
+                Oui. Elles ne sont ni vendues ni partagées à des tiers et sont traitées avec respect et sécurité.
+              </p>
+            </details>
+
+            <details class="group rounded-2xl border border-slate-100 bg-white p-4 open:shadow-soft">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
+                <span class="font-medium text-slate-900">Prise de RDV & annulation</span>
+                <span class="text-slate-400 group-open:rotate-180 transition">⌄</span>
+              </summary>
+              <p class="mt-2 text-sm text-slate-700">
+                RDV à l’avance (site, message, téléphone). Merci d’anticiper vos reports/annulations (≥ 24&nbsp;h).
+              </p>
+            </details>
+
+            <details class="group rounded-2xl border border-slate-100 bg-white p-4 open:shadow-soft">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
+                <span class="font-medium text-slate-900">Tarifs & TVA</span>
+                <span class="text-slate-400 group-open:rotate-180 transition">⌄</span>
+              </summary>
+              <p class="mt-2 text-sm text-slate-700">
+                Prix en euros TTC (non soumis à TVA – Art. 293&nbsp;B du CGI). Cartes cadeaux valables 6&nbsp;mois, non remboursables.
+              </p>
+            </details>
+
+          </div>
+        </section>
+
+        <!-- Boutons -->
+        <div class="pt-2 flex flex-wrap items-center justify-end gap-2">
+          <a href="#contact" class="rounded-xl border border-slate-200 px-4 py-2 text-slate-700 hover:bg-slate-50">Une question ?</a>
+          <button id="conditionsClose2" class="rounded-xl bg-brand-600 px-4 py-2 text-white hover:bg-brand-700">Fermer</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Bannière cookies -->
+  <div id="cookieBanner" class="fixed bottom-4 left-1/2 z-50 hidden w-[90%] max-w-xl -translate-x-1/2 rounded-2xl bg-white/90 p-4 shadow-soft ring-1 ring-slate-200 backdrop-blur-md">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-700">
+      <p class="text-center sm:text-left">
+        Ce site utilise des cookies pour améliorer votre expérience.
+        <a href="#rgpd" class="text-brand-700 underline">En savoir plus</a>.
+      </p>
+      <div class="flex gap-2">
+        <button id="cookieAccept" class="rounded-xl bg-brand-600 px-4 py-2 text-white hover:bg-brand-700 transition">Accepter</button>
+        <button id="cookieDecline" class="rounded-xl border border-slate-200 px-4 py-2 text-slate-700 hover:bg-slate-100 transition">Refuser</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+  // Exécuté après chargement du DOM
+  document.addEventListener('DOMContentLoaded', () => {
+    // Footer year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
+
+    // Surlignage nav selon section visible
+    const sections = ['hero','about','services','pricing','cta','gallery','testimonials','booking','contact'];
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        const id = entry.target.getAttribute('id');
+        document.querySelectorAll(`a[href="#${id}"]`).forEach(a=>{
+          entry.isIntersecting ? a.classList.add('text-brand-700') : a.classList.remove('text-brand-700');
+        });
+      });
+    },{threshold:.5});
+    sections.forEach(id=>{ const el=document.getElementById(id); if(el) observer.observe(el); });
+
+    // Détails services (modale)
+    const detailMap = {
+      reflexo:{ title:'Réflexologie', body:"Stimulation des zones réflexes des pieds/mains pour rééquilibrer l’organisme, améliorer le sommeil et réduire le stress."},
+      madero:{ title:'Maderothérapie', body:"Activation de la circulation sanguine et lymphatique via des instruments en bois, lissage des tensions et drainage naturel."},
+      bienetre:{ title:'Massage bien-être', body:"Protocole relaxant sur mesure pour un relâchement profond et une meilleure récupération."},
+      drainage:{ title:'Drainage lymphatique', body:"Manœuvres douces favorisant le retour lymphatique et la sensation de légèreté."},
+      postop:{ title:'Accompagnement post-opératoire', body:"Prise en charge adaptée pour accompagner la récupération (sur avis médical)."},
+      thai:{ title:'Massage thaï pieds / jambes', body:"Travail sur les jambes et les pieds pour stimuler la circulation et apporter légèreté."}
+    };
+    const modal = document.getElementById('detailModal');
+    const detailTitle = document.getElementById('detailTitle');
+    const detailBody = document.getElementById('detailBody');
+    const detailClose = document.getElementById('detailClose');
+    document.querySelectorAll('[data-detail]').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const d = detailMap[btn.getAttribute('data-detail')] || {title:'Détail', body:'Description à venir.'};
+        detailTitle.textContent = d.title; detailBody.textContent = d.body; modal.classList.remove('hidden');
+      });
+    });
+    detailClose.addEventListener('click',()=> modal.classList.add('hidden'));
+    modal.addEventListener('click',(e)=>{ if(e.target===modal) modal.classList.add('hidden'); });
+
+    // Galerie / carrousel
+    const track = document.getElementById('galTrack');
+    const slides = Array.from(track?.children || []);
+    const btnPrev = document.getElementById('galPrev');
+    const btnNext = document.getElementById('galNext');
+    const btnPrevM = document.getElementById('galPrevM');
+    const btnNextM = document.getElementById('galNextM');
+    const dotsWrap = document.getElementById('galDots');
+
+    function goTo(index){
+      const clamped = Math.max(0, Math.min(index, slides.length - 1));
+      const target = slides[clamped];
+      if(!target) return;
+      const left = target.offsetLeft - (track.clientWidth - target.clientWidth) / 2;
+      track.scrollTo({ left, behavior: 'smooth' });
+    }
+    function activeFromScroll(){
+      const mid = track.scrollLeft + track.clientWidth/2;
+      let active = 0, best = Infinity;
+      slides.forEach((el,i)=>{
+        const boxLeft = el.offsetLeft + el.clientWidth/2;
+        const diff = Math.abs(boxLeft - mid);
+        if(diff < best){ best = diff; active = i; }
+      });
+      return active;
+    }
+    slides.forEach((_,i)=>{
+      const b = document.createElement('button');
+      b.className = 'h-2 w-2 rounded-full bg-slate-300 aria-[current=true]:bg-brand-600 transition';
+      b.setAttribute('aria-label', `Aller à la photo ${i+1}`);
+      b.addEventListener('click',()=>goTo(i));
+      dotsWrap.appendChild(b);
+    });
+    function syncDots(){
+      const a = activeFromScroll();
+      [...dotsWrap.children].forEach((d,i)=> d.setAttribute('aria-current', i===a ? 'true' : 'false'));
+    }
+    track?.addEventListener('scroll', ()=>{ window.requestAnimationFrame(syncDots); });
+    syncDots();
+    function step(dir){ goTo( activeFromScroll() + dir ); }
+    [btnPrev, btnPrevM].forEach(b=> b?.addEventListener('click', ()=>step(-1)));
+    [btnNext, btnNextM].forEach(b=> b?.addEventListener('click', ()=>step(1)));
+    track?.addEventListener('keydown', (e)=>{ if(e.key==='ArrowRight') step(1); if(e.key==='ArrowLeft') step(-1); });
+
+    // Autoplay visible uniquement si galerie à l’écran
+    let auto = null;
+    const startAuto = () => { if (!auto) auto = setInterval(()=> step(1), 5000); };
+    const stopAuto  = () => { if (auto) { clearInterval(auto); auto = null; } };
+    const io = new IntersectionObserver(([entry]) => { entry.isIntersecting ? startAuto() : stopAuto(); }, { threshold: 0.3 });
+    if(track) io.observe(track);
+    track?.addEventListener('mouseenter', stopAuto);
+    track?.addEventListener('mouseleave', startAuto);
+
+    // Lightbox
+    const lb = document.createElement('div');
+    lb.id = 'galleryLightbox';
+    lb.className = 'fixed inset-0 z-[60] hidden bg-black/80 items-center justify-center p-4';
+    lb.innerHTML = `<div class="relative max-w-5xl w-full"><button id="lbClose" class="absolute -top-10 right-0 rounded-lg bg-white/90 px-3 py-1 text-slate-700">Fermer ✖</button><img id="lbImg" src="" alt="Photo galerie" class="w-full rounded-2xl shadow-soft"/></div>`;
+    document.body.appendChild(lb);
+    const lbImg = lb.querySelector('#lbImg'); const lbClose = lb.querySelector('#lbClose');
+    slides.forEach(fig=>{
+      const img = fig.querySelector('img'); img.style.cursor = 'zoom-in';
+      img.addEventListener('click', ()=>{ lbImg.src = img.getAttribute('data-full') || img.src; lb.classList.remove('hidden'); lb.classList.add('flex'); });
+    });
+    lb.addEventListener('click', (e)=>{ if(e.target===lb){ lb.classList.add('hidden'); lb.classList.remove('flex'); } });
+    lbClose.addEventListener('click', ()=>{ lb.classList.add('hidden'); lb.classList.remove('flex'); });
+
+    // Formulaire contact (fake)
+    const contactForm = document.getElementById('contactForm');
+    const formMsg = document.getElementById('formMsg');
+    contactForm?.addEventListener('submit',(e)=>{ e.preventDefault(); formMsg.classList.remove('hidden'); contactForm.reset(); });
+
+    // Cookies banner
+    const banner = document.getElementById('cookieBanner');
+    const accept = document.getElementById('cookieAccept');
+    const decline = document.getElementById('cookieDecline');
+    const consent = localStorage.getItem('cookieConsent');
+    if (!consent) banner.classList.remove('hidden');
+    accept?.addEventListener('click', ()=>{ localStorage.setItem('cookieConsent','accepted'); banner.classList.add('hidden'); });
+    decline?.addEventListener('click', ()=>{ localStorage.setItem('cookieConsent','declined'); banner.classList.add('hidden'); });
+
+    // Helper : lier une ancre à une modale
+    function wireModal(anchorSelector, modalId, closeSelectors = []) {
+      const modal = document.getElementById(modalId);
+      if (!modal) return;
+      document.querySelectorAll(`a[href="${anchorSelector}"]`).forEach(a => {
+        a.addEventListener('click', (e) => { e.preventDefault(); modal.classList.remove('hidden'); });
+      });
+      closeSelectors.forEach(sel => document.querySelector(sel)?.addEventListener('click', () => modal.classList.add('hidden')));
+      modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.add('hidden'); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') modal.classList.add('hidden'); });
+    }
+    // Brancher les modales (après présence dans le DOM)
+    wireModal('#rgpd', 'rgpdModal', ['#rgpdClose', '#rgpdClose2']);
+    wireModal('#privacy', 'privacyModal', ['#privacyClose', '#privacyClose2']);
+    wireModal('#conditions', 'conditionsModal', ['#conditionsClose', '#conditionsClose2']);
+  });
+  </script>
+  <!-- Bouton "Retour en haut" -->
+<button id="scrollTopBtn"
+  class="fixed bottom-6 right-6 hidden items-center justify-center rounded-full bg-brand-600 p-3 text-white shadow-soft transition hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-400"
+  aria-label="Revenir en haut">
+  ↑
+</button>
+
+<script>
+// === Bouton "Remonter" ===
+const scrollBtn = document.getElementById('scrollTopBtn');
+
+// Affiche le bouton après un certain défilement
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    scrollBtn.classList.remove('hidden');
+    scrollBtn.classList.add('flex');
+  } else {
+    scrollBtn.classList.add('hidden');
+    scrollBtn.classList.remove('flex');
+  }
+});
+
+// Animation fluide vers le haut
+scrollBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+
+</body>
+</html>
